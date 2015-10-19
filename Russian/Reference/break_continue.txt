@@ -6,30 +6,30 @@
   
 @Description
 
-  @Keyword Break provides the ability to exit during any iteration, for the following loops: 
-  @ReferenceLink "Repeat_Until" Repeat, @ReferenceLink "For_Next" For, @ReferenceLink "ForEach_Next" ForEach and @ReferenceLink "While_Wend" While. 
-  The optional 'level' parameter specifies the number of loops to exit from, given several nested loops. 
-  If no parameter is given, @Keyword Break exits from the current loop.
+  @Keyword Break предоставляет возможность выхода на любой итерации для следующих циклов:
+  @ReferenceLink "Repeat_Until" Repeat, @ReferenceLink "For_Next" For, @ReferenceLink "ForEach_Next" ForEach и @ReferenceLink "While_Wend" While.
+  Необязательный параметр 'Level' задаёт из какого количества циклов следует выйти (если присутствуют несколько вложенных циклов).
+  Если параметр не задан, @Keyword Break обеспечивает выход только из текущего цикла.
   
-  @Example Simple loop
+  @Example Простой цикл
   
 @Code    
   For k=0 To 10
     If k=5
-      Break  ; Will exit directly from the For/Next loop
+      Break  ; Сразу выйдет из цикла For/Next
     EndIf
     Debug k
   Next
 @EndCode
   
-  @Example Nested loops
+  @Example Вложенные циклы
   
 @Code  
   For k=0 To 10
     Counter = 0
     Repeat
       If k=5
-        Break 2 ; Will exit directly from the Repeat/Until and For/Next loops
+        Break 2 ; Сразу выйдет из циклов Repeat/Until и For/Next
       EndIf
       Counter+1
     Until Counter > 1
@@ -44,16 +44,16 @@
   
 @Description
 
-  @Keyword Continue provides the ability to skip straight to the end of the current iteration 
-  (bypassing any code in between) in the following loops: 
-  @ReferenceLink "Repeat_Until" Repeat, @ReferenceLink "For_Next" For, @ReferenceLink "ForEach_Next" ForEach, and @ReferenceLink "While_Wend" While.
+  @Keyword Continue предоставляет возможность перейти сразу к концу текущей итерации
+  (пропустив весь оставшийся код) в следующих циклах:
+  @ReferenceLink "Repeat_Until" Repeat, @ReferenceLink "For_Next" For, @ReferenceLink "ForEach_Next" ForEach, и @ReferenceLink "While_Wend" While.
   
   @Example
   
 @Code
   For k=0 To 10
     If k=5
-      Continue  ; Will skip the 'Debug 5' and go directly to the next iteration
+      Continue  ; Пропустит 'Debug 5' и перейдёт сразу к следующей итерации
     EndIf
     Debug k
   Next

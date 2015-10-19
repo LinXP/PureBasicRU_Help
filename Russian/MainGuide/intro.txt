@@ -1,0 +1,41 @@
+@Title Introduction
+
+  PureBasic is an "high-level" programming language based on established "BASIC" rules. 
+  It is mostly compatible with any other "BASIC" compiler. 
+  Learning PureBasic is very easy! PureBasic has been created for beginners and experts alike. 
+  Compilation time is extremely fast. This software has been developed for the Windows operating system. 
+  We have put a lot of effort into its realization to produce a fast, reliable and system-friendly language. @LineBreak
+  @LineBreak
+  The syntax is easy and the possibilities are huge with the "advanced" functions that have been added 
+  to this language like pointers, structures, procedures, dynamic lists and much more. 
+  For the experienced coder, there are no problems gaining access to any of the legal OS structures or 
+  API objects. @LineBreak
+  @LineBreak
+  PureBasic is a portable programming language which currently works on Linux, Mac OS X and 
+  Windows computer systems. This means that the same code can be compiled natively for the OS and 
+  use the full power of each. There are no bottlenecks like a virtual machine or a code translator, 
+  the generated code produces an optimized executable. @LineBreak
+  @LineBreak
+  
+@Section The main features of PureBasic
+
+    - x86 and x64 support @LineBreak
+    - Built-in arrays, dynamic lists, complex structures, pointers and variable definitions @LineBreak
+    - Supported types: Byte (8-bit), Word (16-bit), Long (32-bit), Quad (64-bit), Float (32-bit), Double (64-bit) and Characters @LineBreak
+    - User defined types (structures) @LineBreak
+    - Built-in string types (characters), including ascii and unicode @LineBreak
+    - Powerful macro support @LineBreak
+    - Constants, binary and hexadecimal numbers supported @LineBreak
+    - Expression reducer by grouping constants and numeric numbers together @LineBreak
+    - Standard arithmetic support in respect of sign priority and parenthesis: +, -, /, *, and, or, <<, >> @LineBreak
+    - Extremely fast compilation @LineBreak
+    - Procedure support for structured programming with local and global variables @LineBreak
+    - All Standard BASIC keywords: If-Else-EndIf, Repeat-Until, etc @LineBreak
+    - Specialized libraries to manipulate BMP pictures, windows, gadgets, DirectX, etc @LineBreak
+    - Specialized libraries are very optimized for maximum speed and compactness @LineBreak
+    - The Win32 API is fully supported as if they were BASIC keywords @LineBreak
+    - Inline Assembler @LineBreak
+    - Precompiled structures with constants files for extra-fast compilation @LineBreak
+    - Configurable CLI compiler @LineBreak
+    - Very high productivity, comprehensive keywords, online help @LineBreak
+    - System friendly, easy to install and easy to use @LineBreak

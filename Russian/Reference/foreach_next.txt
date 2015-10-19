@@ -8,20 +8,20 @@
   
 @Description 
 
-  @Keyword ForEach loops through all elements in the specified list or map starting from the first 
-  element up to the last. If the list or the map is empty, @Keyword ForEach : @Keyword Next exits immediately. 
-  To view all commands used to manage lists, please click @LibraryLink "List" "here".
-  To view all commands used to manage maps, please click @LibraryLink "Map" "here". @LineBreak
+  Цикл @Keyword ForEach проходит по всех элементам заданного связанного списка или отображения, начиная
+  с первого элемента до последнего. Если список или отображение пусто, цикл @Keyword ForEach : @Keyword Next немедленно выходит.
+  Чтобы увидеть все команды работы со списками, пожалуйста кликните @LibraryLink "List" "здесь".
+  Чтобы увидеть все команды работы с отображениями, пожалуйста кликните @LibraryLink "Map" "здесь". @LineBreak
   @LineBreak
-  When used with list, it's possible to @Link "List/DeleteElement" "delete" or @Link "List/AddElement" "add" elements
-  during the loop. As well it's allowed to change the current element with @@ChangeCurrentElement.
-  After one of the mentioned changes the next loop continues with the element following the current element.
+  При использовании со связанным списком можно @Link "List/DeleteElement" "удалять" или @Link "List/AddElement" "добавлять" элементы
+  внутри цикла. Также разрешено передвигать текущий элемент с помощью функции @@ChangeCurrentElement.
+  После любого из названных изменений цикл продолжится с элемента, следующего за текущим элементом.
   @LineBreak
   @LineBreak
-  With the @ReferenceLink "Break_Continue" Break command its possible to exit the @Keyword ForEach : @Keyword Next loop
-  at any moment, with the @ReferenceLink "Break_Continue" Continue command the end of the current iteration can be skipped. 
+  С помощью команды @ReferenceLink "Break_Continue" Break можно выйти из цикла @Keyword ForEach : @Keyword Next в любой момент,
+  с помощью команды @ReferenceLink "Break_Continue" Continue можно пропустить остаток текущей итерации.
 
-  @Example list
+  @Example Связанный список (list)
 
 @Code       
   NewList Number()
@@ -36,18 +36,18 @@
   Number() = 30
     
   ForEach Number()
-    Debug Number() ; Will output 10, 20 and 30
+    Debug Number() ; Выведет 10, 20 и 30
   Next
 @EndCode  
 
-  @Example Map
+  @Example Отображение (Map)
 
 @Code       
   NewMap Country.s()
 
-  Country("US") = "United States"
-  Country("FR") = "France"
-  Country("GE") = "Germany"
+  Country("UA") = "Украина"
+  Country("RU") = "Россия"
+  Country("US") = "США"
 
   ForEach Country()
     Debug Country()

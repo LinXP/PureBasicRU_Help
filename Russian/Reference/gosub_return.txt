@@ -11,18 +11,18 @@
  
 @Description
 
-  @Keyword Gosub stands for 'Go to sub routine'. A @ReferenceLink "general_rules" "label" must be specified after @Keyword Gosub, at that point 
-  the program execution continues immediately after the position defined by that label, and will do so until 
-  encountering a @Keyword Return. When a return is reached, the program execution is then transferred immediately 
-  below the @Keyword Gosub.
+  Команда @Keyword Gosub буквально означает 'Иди в подпрограмму' и используется для вызова подпрограммы MyLabel.
+  После @Keyword Gosub должна быть указана @ReferenceLink "general_rules" "метка" подпрограммы,
+  программа продолжит выполнение с позиции, заданной этой меткой, и будет делать это пока не встретит @Keyword Return.
+  После выполнения команды @Keyword Return, программа вернется к строке, следующей за командой @Keyword Gosub.
   @LineBreak
-  @Keyword Gosub is useful when building fast structured code.
+  Команда @Keyword Gosub полезна для создания быстрого структурированного кода.
   @LineBreak
   @LineBreak
-  Another technique which may be used in order to insert a sub routine into a standalone program component 
-  is to use @ReferenceLink "procedures" "procedures".
-  @Keyword Gosub may only be used within the main body of the source code, and may not be used within 
-  @ReferenceLink "procedures" "procedures".
+  Другой приём, с помощью которого можно вставить подпрограмму в самостоятельный компонент программы,
+  это @ReferenceLink "procedures" "процедуры".
+  @Keyword Gosub можно использовать только внутри основного кода, но нельзя использовать внутри
+  @ReferenceLink "procedures" "процедур".
 
   @Example
 
@@ -45,9 +45,12 @@
 
 @Description
 
-  If the command @ReferenceLink "Others" Goto is used within the body of a sub routine, @Keyword FakeReturn must be used.
-  @Keyword FakeReturn simulates a return without actually executing a return, and if it is not used, the program will crash.
-  Note: To exit a loop safely, @ReferenceLink "break_continue" "Break" should be used instead of Goto. 
+  Если Вы хотите совершить прыжок (@ReferenceLink "Others" Goto) из подпрограммы в другую часть кода (вне подпрограммы)
+  - следует использовать @Keyword FakeReturn для имитации выхода из подпрограммы.
+  @Keyword FakeReturn имитирует @Keyword Return без выполнения возврата, и если его не использовать, программа даст сбой. @LineBreak
+  Примечание 1: Чтобы безопасно завершить цикл, вместо @ReferenceLink "Others" Goto следует использовать @ReferenceLink "break_continue" "Break". @LineBreak
+  Примечание 2: Не рекомендуется использовать эту команду, потому что хорошо созданная программа не использует @ReferenceLink "Others" Goto.
+  Но иногда, по причине быстродействия, это может помочь программисту.
 
   @Example
   

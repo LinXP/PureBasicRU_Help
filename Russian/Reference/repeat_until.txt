@@ -4,16 +4,17 @@
 
   @Keyword Repeat
     ...
-  @Keyword Until <expression> [or @Keyword Forever] 
+  @Keyword Until <выражение> [или @Keyword Forever]
 
 @Description
 
-  This function will loop until the <expression> becomes true. The number of loops is unlimited.
-  If an endless loop is needed then use the @Keyword Forever keyword instead of @Keyword Until. 
+  Эта функция повторяет цикл до тех пор, пока <выражение> не станет истинным. Количество циклов не ограничено.
+  Проверка значения <выражения> происходит в конце итерации, поэтому цикл выполняется как минимум один раз.
+  Если нужен бесконечный цикл, используйте ключевое слово @Keyword Forever вместо ключевого слова @Keyword Until.
 
-  With the @ReferenceLink "Break_Continue" Break command, it is possible to exit the 
-  @Keyword Repeat : @Keyword Until loop during any iteration. With @ReferenceLink "Break_Continue" Continue 
-  command, the end of the current iteration may be skipped. 
+  С помощью команды @ReferenceLink "Break_Continue" Break можно выйти из цикла
+  @Keyword Repeat : @Keyword Until на любой итерации. С помощью команды @ReferenceLink "Break_Continue" Continue
+  можно пропустить остаток текущей итерации.
 
 @Example
 
@@ -24,4 +25,4 @@
   Until a>100 
 @EndCode
 
-  This will loop until "a" takes a value > to 100, (it will loop 101 times). 
+  Этот цикл повторяется, пока "a" не примет значение > 100, (то есть цикл повторится 101 раз).

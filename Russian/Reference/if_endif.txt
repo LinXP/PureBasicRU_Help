@@ -2,9 +2,9 @@
 
 @Syntax
 
-  @Keyword If <expression> 
+  @Keyword If <переменная>
     ...
-  [@Keyword ElseIf <expression>]
+  [@Keyword ElseIf <переменная>]
     ...
   [@Keyword Else]
     ...
@@ -12,14 +12,14 @@
   
 @Description
 
-  The @Keyword If structure is used to achieve tests, and/or change the programmes direction, depending on whether the test is true or false. 
-  @Keyword ElseIf optional command is used for any number of additional tests if the previous test was not true. 
-  The @Keyword Else optional command is used to execute a part of code, if all previous tests were false. 
-  Any number of @Keyword If structures may be nested together. @LineBreak
+  Структура @Keyword If используется для проверок, и/или изменения хода выполнения программы, в зависимости от истинности или ложности результата проверки.
+  Необязательная команда @Keyword ElseIf используется для любого количества добавочных проверок, если предыдущая проверка не была истинной.
+  Необязательная команда @Keyword Else используется для выполнения части кода в том случае, если все предыдущие проверки были ложными.
+  Можно вложить друг в друга любое количество структур @Keyword If. @LineBreak
   @LineBreak
-  Short-circuit evaluations for expressions are supported, meaning if a test is true, all following tests will be ignored and not even run.
+  Проверки "Короткого замыкания" для выражений поддерживаются, это означает, если проверка выполнена, то все следующие тесты будут игнорироваться, и даже не выполняться.
 
-  @Example Basic test
+  @Example Простая проверка
 
 @Code
   a = 5
@@ -30,7 +30,7 @@
   EndIf    
 @EndCode
 
-  @Example Multiple test
+  @Example Несколько проверок
 
 @Code
   b = 15
@@ -38,25 +38,25 @@
     If b = 15
       Debug "b = 15"
     Else       
-      Debug "Other possibility"
+      Debug "Другая возможность"
     EndIf   
   Else     
-    Debug "Test failure"
+    Debug "Проверка не пройдена"
   EndIf  
 @EndCode
 
-  @Example Short-circuit test
+  @Example Проверка "Короткое замыкание"
 
 @Code
   Procedure DisplayHello()
-    Debug "Hello"
+    Debug "Привет"
     ProcedureReturn 1
   EndProcedure
 
   a = 10
-  If a = 10 Or DisplayHello() = 1 ; a is equal to 10, so the second test is fully ignored
-    Debug "Test success"
+  If a = 10 Or DisplayHello() = 1 ; значение "а" равно 10, так что второй тест полностью игнорируется
+    Debug "Проверка пройдена"
   Else     
-    Debug "Test failure"
+    Debug "Проверка не пройдена"
   EndIf  
 @EndCode

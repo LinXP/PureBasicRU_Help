@@ -2,23 +2,23 @@
 
 @Syntax
 
-  @Keyword For <variable> = <expression1> @Keyword To <expression2> [@Keyword Step <constant>]
+  @Keyword For <переменная> = <выражение1> @Keyword To <выражение2> [@Keyword Step(Шаг) <константа>]
     ...
-  @Keyword Next [<variable>]
+  @Keyword Next [<переменная>]
 
 @Description
 
-  @Keyword For : @Keyword Next is used to create a loop within a program with the given parameters.
-  At each loop the <variable> value is increased by a 1, (or of the "Step value" if a @Keyword Step value 
-  is specified) and when the <variable> value is above the <expression2> value, the loop stop. 
+  Оператор @Keyword For : @Keyword Next используется для создания в программе цикла с заданными параметрами.
+  На каждой итерации значение <переменной> увеличивается на 1, (или на "значение Шага" если задано значение @Keyword Step),
+  и когда значение <переменной> станет больше значения <выражения2>, цикл прекращается.
   @LineBreak
   @LineBreak
-  With the @ReferenceLink "Break_Continue" Break command its possible to exit the @Keyword For : @Keyword Next loop at any moment,
-  with the @ReferenceLink "Break_Continue" Continue command the end of the current iteration can be skipped. 
+  С помощью команды @ReferenceLink "Break_Continue" Break можно выйти из цикла @Keyword For : @Keyword Next в любой момент,
+  с помощью команды @ReferenceLink "Break_Continue" Continue можно пропустить остаток текущей итерации.
   @LineBreak
   @LineBreak
-  The @Keyword "For : Next" loop works only with integer values, at the expressions as well 
-  at the @Keyword "Step" constant. The @Keyword "Step" constant can also be negative.
+  Цикл @Keyword "For : Next" работает только с целочисленными значениями, и для выражений, и для константы @Keyword "Step".
+  Константа @Keyword "Step" также может быть отрицательной.
 
 @Example 
 
@@ -28,7 +28,7 @@
   Next
 @EndCode
     
-  In this example, the program will loop 11, time (0 to 10), then quit.
+  В этом примере программа повторит цикл 11 раз (от 0 до 10), затем выйдет.
 
 @Example 
 
@@ -38,7 +38,7 @@
   Next
 @EndCode
     
-  In this example, the program will loop 10 times (10 to 1 backwards), then quit.
+  В этом примере программа повторит цикл 10 раз (от 10 уменьшаясь до 1), затем выйдет.
 
 @Example 
 
@@ -50,9 +50,9 @@
   Next k  
 @EndCode
 
-  Here, the program will loop 4 times before quitting, (k is increased by a value of 2 at each loop, 
-  so the k value is: 4-6-8-10). The "k" after the "Next" indicates that "Next" is ending the "For k" loop.
-  If another variable, is used the compiler will generate an error. It can be useful to nest several "For/Next" loops.
+  Здесь программа повторит цикл 4 раза прежде чем выйти, (k увеличивается на 2 на каждой итерации,
+  так что значение k будет: 4-6-8-10). Идентификатор "k" после "Next" показывает, что "Next" заканчивает цикл "For k".
+  Если использовать другую переменную, компилятор сообщит об ошибке. Это может быть полезно для организации нескольких вложенных циклов "For/Next".
 
 @Example
 
@@ -64,5 +64,5 @@
   Next x
 @EndCode
 
-  @Bold Note: Be aware, that in PureBasic the value of <expression2> ('To' value) can also be changed inside 
-  the For : Next loop. This can lead to endless loops when wrongly used. 
+  @Bold Примечание: Учтите, что в PureBasic значение <выражения2> (значение 'To') также можно изменить внутри цикла For : Next.
+  При неправильном использовании это может привести к бесконечным повторам.

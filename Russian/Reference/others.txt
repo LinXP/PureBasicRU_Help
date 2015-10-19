@@ -1,15 +1,15 @@
-@Title Others Commands 
+@Title Другие команды
 
 @Syntax
   
-  @Keyword Goto <label>
+  @Keyword Goto <метка>
 
 @Description
 
-  This command is used to transfer the program directly to the labels position. Be cautious when using 
-  this function, as incorrect use could cause a program to crash... @LineBreak
+  Эта команда используется для перевода программы прямо к позиции <метка>. Будьте осторожны
+  при использовании этой функции, так как некорректное использование может вызвать сбой программы...  @LineBreak
   @LineBreak
-  Note: To exit a loop safely, you always should use @ReferenceLink "Break_Continue" Break instead of @Keyword Goto. 
+  Примечание: Чтобы безопасно выйти из цикла, вам всегда следует использовать @ReferenceLink "Break_Continue" Break вместо @Keyword Goto. 
 
 ; ---------------------------------------------------------------------------------------------------
 
@@ -19,48 +19,59 @@
 
 @Description
 
-  Ends the program execution correctly. The 'ExitCode' optional parameter can be specified if the 
-  program need to returns an error code (widely used in console programs). 
+  Корректно заканчивает выполнение программы. Можно задать необязательный параметр 'ExitCode', если программа
+  должна возвратить код ошибки (широко используется в консольных программах).
   @LineBreak
   @LineBreak
-  The 'ExitCode' can be further used e.g. with the @@ProgramExitCode command.
+  'ExitCode' может в дальнейшем использоваться например с командой @@ProgramExitCode.
+
+@Example
+@Code
+  Program = RunProgram("Vasha_programma.exe", "Параметр", "C:\rabochaya_papka_vashei_programmi\", #PB_Program_Wait)
+  ; Прога Vasha_programma.exe запущена с параметром Параметр и с рабочей папкой C:\rabochaya_papka_vashei_programmi\,
+  ; программа, запустившая её, ожидает завершения проги Vasha_programma.exe
+
+  Result = ProgramExitCode(Program); по завершении программы Vasha_programma.exe запустившая её программа получит exitcode
+@EndCode
 
 ; ---------------------------------------------------------------------------------------------------
   
 @Syntax
   
-  @Keyword Swap <expression>, <expression>
+  @Keyword Swap <выражение>, <выражение>
 
 @Description
 
-  Swaps the value of the both expression, in an optimized way. The both <expression> have to be
-  a @ReferenceLink "variables" "variable", @ReferenceLink "dim" "array", @ReferenceLink "newlist" "list" or a  @ReferenceLink "newmap" "map"
-  element (structured or not) and have to be one of the
-  PureBasic native type like long (.l), quad (.q), string etc.
+  Изменяет значения обоих выражений оптимизированным способом, меняя их местами. Оба <выражения> должны
+  быть @ReferenceLink "variables" "переменными", @ReferenceLink "dim" "массивами", @ReferenceLink "newlist" "связанными списками" или
+  элементы @ReferenceLink "newmap" "отображения"  (структурированного или нет) и принадлежать одному из
+  @ReferenceLink "variables" "типов" PureBasic, такому как long (.l), quad (.q), string и т.д.
 
-@Example Swapping of strings
+@Example Обмен строк
 @Code
-  Hello$ = "Hello"
-  World$ = "World"
+  Hello$ = "Привет"
+  World$ = "Мир"
+  
+  Debug Hello$+" "+World$ ; выведет "Привет Мир"
   
   Swap Hello$, World$
   
-  Debug Hello$+" "+World$
+  Debug Hello$+" "+World$ ; выведет "Мир Привет"
 @EndCode
 
-@Example Swapping of multi-dimensional arrays elements
+@Example Обмен многомерных массивов
 @Code
   Dim Array1(5,5) 
   Dim Array2(5,5) 
-  Array1(2,2) = 10     ; set initial contents
+  Array1(2,2) = 10     ; задаём начальное содержание
   Array2(3,3) = 20
   
-  Debug Array1(2,2) ; will print 10
-  Debug Array2(3,3) ; will print 20
+  Debug Array1(2,2) ; выведет 10
+  Debug Array2(3,3) ; выведет 20
   
-  Swap Array1(2,2) , Array2(3,3)  ; swap 2 arrays elements
+  Swap Array1(2,2) , Array2(3,3)  ; обмениваем 2 элемента массивов
   
-  Debug "Array contents after swapping:"
-  Debug Array1(2,2)    ; will print 20
-  Debug Array2(3,3)    ; will print 10
+  Debug "Содержание массивов после обмена:"
+  Debug Array1(2,2)    ; выведет 20
+  Debug Array2(3,3)    ; выведет 10
 @EndCode

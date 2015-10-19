@@ -2,18 +2,18 @@
 
 @Syntax
 
-  @Keyword While <expression>
+  @Keyword While <выражение>
     ...
   @Keyword Wend
 
 @Description 
 
-  @Keyword Wend will loop until the <expression> becomes false. A good point to keep in mind with a @Keyword While test 
-  is that if the first test is false, then the program will never enter the loop and will skip this part. 
-  A @ReferenceLink "Repeat_Until" Repeat loop is executed at least once, (as the test is performed after each loop). @LineBreak
+  @Keyword Wend повторяет цикл пока <expression> не станет ложью. О проверке условия в операторе @Keyword While полезно
+  держать в голове, что если первая проверка ложная, то выполнение программы никогда не достигнет кода внутри цикла и пропустит эту часть.
+  Цикл @ReferenceLink "Repeat_Until" Repeat выполняется по крайней мере один раз (так как проверка выполняется после каждой итерации). @LineBreak
   @LineBreak
-  With the @ReferenceLink "Break_Continue" Break command it is possible to exit the @Keyword While : @Keyword Wend loop during any iteration, 
-  with the @ReferenceLink "Break_Continue" Continue command the end of the current iteration may be skipped.
+  С помощью команды @ReferenceLink "Break_Continue" Break можно выйти из цикла @Keyword While : @Keyword Wend на любой итерации,
+  с помощью команды @ReferenceLink "Break_Continue" Continue можно пропустить остаток текущей итерации.
 
 @Example
 
@@ -28,4 +28,4 @@
   Wend 
 @EndCode
 
-  This program loops until the 'a' value is <> 10. The value of 'a' becomes 11 when b=10, the program will loop 10 times. 
+  Эта программа повторяет цикл пока значение "a" <> 10. Значение "a" станет равно 11 когда b=10, программа повторит цикл 10 раз.

@@ -2,10 +2,10 @@
 
 @Syntax
 
-  @Keyword Select <expression1>
-    @Keyword Case <expression> [, <expression> [<numeric expression> To <numeric expression>]]
+  @Keyword Select <выражение1>
+    @Keyword Case <выражение> [, <выражение> [<числовое выражение> To <числовое выражение>]]
        ...
-    [@Keyword Case <expression>]
+    [@Keyword Case <выражение>]
        ...
     [@Keyword Default] 
        ...
@@ -13,19 +13,19 @@
 
 @Description
 
-  @Keyword Select provides the ability to determine a quick choice. The program will execute the <expression1> and retain its' value in memory. 
-  It will then compare this value to all of the @Keyword "Case" <expression> values and if a given @Keyword "Case" <expression> value is true,
-  it will then execute the corresponding code and quit the @Keyword Select structure. @Keyword Case supports multi-values and value ranges
-  through the use of the optional @Keyword To keyword (numeric values only). If none of the @Keyword Case values are true, then the @Keyword Default 
-  code will be executed (if specified).
+  Оператор @Keyword Select предоставляет возможность определить быстрый выбор. Программа выполнит <выражение1> и сохранит его значение в памяти.
+  Затем она сравнит это значение со всеми значениями <выражений> операторов @Keyword Case и если значение <выражения> данного
+  оператора @Keyword Case истинное,   она выполнит соответствующий код и покинет структуру @Keyword Select. Оператор @Keyword Case
+  поддерживает множественные значения и диапазоны значений посредством использования необязательного ключевого слова @Keyword To (только числовые значения).
+  Если ни одно из значений операторов @Keyword Case не истинное, то выполняется код оператора @Keyword Default (если он задан).
 
 @LineBreak
 @LineBreak
-  Note: @Keyword Select will accept @ReferenceLink "variables" "floats" as <expression1> but will round them down to the nearest integer (comparisons
-  will be done only with integer values).
+  Примечание: @Keyword Select допускает @ReferenceLink "variables" "плавающие числа" в качестве <выражения1>, но округляет их до ближайших целых
+  (сравнения производятся только с целочисленными значениями).
   
 
-@Example Simple example
+@Example Простой пример
 
 @Code
   Value = 2
@@ -41,24 +41,24 @@
       Debug "Value = 20"
       
     Default
-      Debug "I don't know"
+      Debug "Я не знаю :("
   EndSelect
 @EndCode
 
-@Example Multicase and range example
+@Example Пример множественного выбора и диапазона
 
 @Code
   Value = 2
   
   Select Value
     Case 1, 2, 3
-      Debug "Value is 1, 2 or 3"
+      Debug "Value равно 1, 2 или 3"
       
     Case 10 To 20, 30, 40 To 50
-      Debug "Value is between 10 and 20, equal to 30 or between 40 and 50"
+      Debug "Значение Value между 10 и 20, равно 30 или между 40 и 50"
       
     Default
-      Debug "I don't know"
+      Debug "Я не знаю :("
       
   EndSelect
 @EndCode

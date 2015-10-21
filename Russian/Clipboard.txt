@@ -8,13 +8,13 @@
 
 @Overview
 
-  The clipboard is the standard way to share information and data between applications,
-  which are currently running on the OS. It also gives the user a temporary location,
-  where information and data may be stored and accessed quickly and easily. For instance,
-  when text is cut within an editor, that text goes to the clipboard, where it may be
-  retrieved later, by pasting it into another application. PureBasic gives the programmer
-  the ability to develop applications capable of cutting, copying and pasting text or images
-  via the standard clipboard.
+  Буфер обмена - стандартный способ обмена информацией между приложениями,
+  которые в данный момент запущены в ОС. Это также дает пользователю временное хранилище,
+  где информация и данные могут быть сохранены и быстро и легко доступны. Например,
+  когда в редакторе вырезается текст, он помещается в буфер обмена, откуда он может быть
+  извлечен позднее путем вставки в другое приложение. PureBasic дает программисту
+  возможность разрабатывать приложения, способные вырезать, копировать и вставлять текст или изображения
+  через стандартный буфер обмена.
 
 @CommandList
 
@@ -28,8 +28,8 @@
 
 @Description
 
-  Clears the clipboard. This means that any data contained within the clipboard, is totally flushed and is no
-  longer available from the clipboard.
+  Очищает буфер обмена. Это означает, что любые данные, хранящиеся там, будут полностью стерты и их
+  невозможно будет извлечь из буфера обмена.
 
 @NoParameters
 @NoReturnValue
@@ -44,23 +44,23 @@
 @Function Result = GetClipboardImage(#Image [, Depth])
 
 @Description
-  Creates a new image from the clipboard image data (if any). 
+  Создает новое изображение из данных, хранящихся в буфере обмена (если они существуют). 
 
 @Parameter "#Image"
-  The number for the new image.
-  @ReferenceLink "purebasic_objects" "#PB_Any" can be used to auto-generate this number.
+  Номер нового изображения.
+  @ReferenceLink "purebasic_objects" "#PB_Any" может быть использовано для автоматической генерации номера.
 
 @OptionalParameter "Depth"
-  The depth of the new image. Valid values are 24 (default) or 32-bit.
+  Глубина нового изображения. Возможные значения: 24 (по умолчанию) или 32 бита.
 
 @ReturnValue
-  Returns nonzero on success and zero on failure.
-  If @#PB_Any was used as the #Image parameter then the new image number is returned.
+  Возвращает ненулевое значение в случае успеха и ноль в противном случае.
+  Если использовано @#PB_Any в параметре #Image, будет возвращен номер нового изображения.
 
 @Remarks
-  The image may be freed by using the @@FreeImage function.
-  For further use of the image, there are functions available such as @@DrawImage
-  or @@ImageGadget.
+  Изображения могут быть уничтожены с помощью функции @@FreeImage.
+  Для дальнейшего использования изображения предусмотрены такие функции как @@DrawImage
+  или @@ImageGadget.
 
 @SeeAlso
   @@GetClipboardText
@@ -72,13 +72,13 @@
 @Function Text$ = GetClipboardText()
 
 @Description
-  Returns the text string currently contained within the clipboard.
+  Возвращает текстовую строку, содержащуюся в буфере обмена.
 
 @NoParameters
 
 @ReturnValue
-  Returns the content of the clipboard if it contains text.
-  If the clipboard contains no data or no text data, then an empty string is returned.
+  Возвращает данные буфера обмена, если в нем содержится текст.
+  Если буфер обмена не содержит текстовых данных, возвращается пустая строка.
 
 @SeeAlso
   @@GetClipboardImage
@@ -90,11 +90,11 @@
 @Function SetClipboardImage(#Image)
 
 @Description
-  Places a copy of the given image into the clipboard. If the clipboard currently
-  contains an image then it will be overwritten.
+  Помещает копию данного изображения в буфер обмена. Если он в текущий момент
+  содержит изображение, оно будет заменено.
 
 @Parameter "#Image"
-  The image to put into the clipboard.
+  Изображение, помещаемое в буфер обмена.
 
 @NoReturnValue
 
@@ -108,8 +108,8 @@
     SetClipboardImage(0)
   EndIf
 
-  ; now if you open a graphics application and paste the clipboard contents,
-  ; you will see a Japanese flag ;-)
+  ; теперь если вы откроете графическое приложение и вставите данные из буфера обмена,
+  ; вы увидите Японский флаг ;-)
 @EndCode
 
 @SeeAlso
@@ -122,10 +122,10 @@
 @Function SetClipboardText(Text$)
 
 @Description
-  Stores a string into the clipboard. If the clipboard already contains text, it will be overwritten.
+  Помещает строку в буфер обмена. Если он в текущий момент содержит текст, он будет перезаписан.
 
 @Parameter "Text$"
-  The string you want to store in the clipboard.
+  Строка, которую вы хотите поместить в буфер обмена.
 
 @NoReturnValue 
 
